@@ -1,12 +1,22 @@
 import React from 'react'
+import Modal from './Modal'
 
 function WorkoutCard(props) {
 
   const {trainingPlan, workoutIndex, type, dayNum, icon} = props
-  const {warmup, workout} = trainingPlan || {}
+
+  const {warmup = [], workout = []} = trainingPlan || {}
+
+  // temporary placeholder; rename or replace with real data when available
+  const showExerciseDescription = { name: 'asdas', description: 'asdsa' }
 
   return (
     <div className='workout-container'>
+      <Modal
+        showExerciseDescription={showExerciseDescription}
+        handleCloseModal={() => {}}
+      />
+
       <div className='workout-card card'>
         <div className='plan-card-header'>
           <p>Day {dayNum}</p>
