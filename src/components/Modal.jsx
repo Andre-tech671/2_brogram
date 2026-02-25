@@ -11,7 +11,11 @@ function Modal(props) {
   return ReactDom.createPortal((
 
     <div className='modal-container'>
-      <button className='modal-underlay' onclick={handleCloseModal} />
+      {/* underlay catches clicks to close */}
+      <button
+        className='modal-underlay'
+        onClick={handleCloseModal} // correct React prop
+      />
       <div className='modal-content'>
         <div>
           <h6>Name</h6>
